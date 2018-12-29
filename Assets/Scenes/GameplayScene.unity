@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1351059159}
-  renderer_frequency: 10
+  renderer_distance: 10
 --- !u!4 &1395140984
 Transform:
   m_ObjectHideFlags: 0

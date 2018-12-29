@@ -8,31 +8,29 @@ public class ObjectSpawner : MonoBehaviour {
     [SerializeField]
     private GameObject player;
 
-    private Vector3 first_spawn;
+    private Vector3 spawn_position;
     
-    private float distance_between_spawning;
+    private float spawning_distance;
 
     [SerializeField]
     [Range(0f,20f)]
-    private float renderer_frequency;
+    private float renderer_distance;
 
     
 
     void Start () {
-        first_spawn = new Vector3(0, 2.2f,0);
-        distance_between_spawning = -10f;
+        spawn_position = new Vector3(0, 2.2f,0);
+        spawning_distance = -10f;
     }
 	 
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        if(player.transform.position.y > distance_between_spawning )
+        if(player.transform.position.y > spawning_distance )
         {
-            ObjectPooler.Instance.SpawnFromPool("Circle", first_spawn);
-            first_spawn.y += renderer_frequency;
-            ObjectPooler.Instance.SpawnFromPool("Circle", first_spawn);
-            first_spawn.y += renderer_frequency;
-            distance_between_spawning += renderer_frequency*2;           
+            ObjectPooler.Instance.SpawnFromPool("Circle", spawn_position);
+            spawn_position.y += renderer_distance;
+            spawning_distance += renderer_distance;           
         }
         
     }
