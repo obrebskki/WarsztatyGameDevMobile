@@ -11,17 +11,21 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private Vector3 offset;
 
-    private float position_y = 1.5f;
+    private Vector3 velocity = Vector3.zero;
 
-    private float smoothness = 0.05f;
+    private float position_y = 0.5f;
 
-    void LateUpdate()
+    private float smoothness = 0.15f;
+
+    void FixedUpdate()
     {   
         Vector3 updated_position = player.position + offset;
         if (updated_position.y > (transform.position.y + position_y) )
         {
-            Vector3 smooth_positioning = Vector3.Lerp(transform.position, updated_position, smoothness);
-            transform.position = smooth_positioning;
+           //transform.position = updated_position;
+           Vector3 smooth_positioning = Vector3.SmoothDamp(transform.position, updated_position,ref velocity,smoothness);
+           transform.position = smooth_positioning;
+           //TODO I think there is sth bad with speed 
         }     
     }
 }

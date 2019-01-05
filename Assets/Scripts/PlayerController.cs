@@ -62,6 +62,11 @@ public class PlayerController : MonoBehaviour
             if (!(currentPlayerColor == PLAYER_COLORS.PURPLE))
                 gameObject.SetActive(false);
         }
+        else if (collision.transform.tag == GameProperties.STAR_TAG)
+        {
+                gameObject.SetActive(false);
+                ScoreScript.Incrementscore();
+        }
     }
 }
 

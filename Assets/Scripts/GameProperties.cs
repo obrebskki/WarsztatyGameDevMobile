@@ -8,6 +8,7 @@ public class GameProperties
     public static string YELLOW_TAG = "YELLOW";
     public static string BLUE_TAG = "BLUE";
     public static string PURPLE_TAG = "PURPLE";
+    public static string STAR_TAG = "STAR";
 
 
 }
