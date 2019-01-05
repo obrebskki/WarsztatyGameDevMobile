@@ -8,6 +8,7 @@ TagManager:
   - RED
   - PURPLE
   - YELLOW
+  - STAR
   layers:
   - Default
   - TransparentFX
